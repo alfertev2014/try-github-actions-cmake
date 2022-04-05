@@ -1,6 +1,8 @@
 #include <iostream>
 
+#include "helloworld.h"
+
 int main(int argc, char *argv[]) {
-    std::cout << "Hello, world!" << std::endl;
+    std::cout << makeHello("world") << std::endl;
     return 0;
 }
