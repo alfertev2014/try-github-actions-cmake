@@ -2,7 +2,7 @@
 #include "version.h"
 
 std::string makeHello(std::string_view target) {
-    return "Hello, " + std::string{target};
+    return "Hello, " + std::string{target} + "!";
 }
 
 int version() {
