@@ -32,20 +32,20 @@ target_link_libraries(helloworld_main PRIVATE helloworld)
 
 if(WITH_BOOST_TEST)
     find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-    add_executable(test_version test_version.cpp)
+    add_executable(test_helloworld test_helloworld.cpp)
 
-    set_target_properties(test_version PROPERTIES
+    set_target_properties(test_helloworld PROPERTIES
         COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
         INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
     )
 
-    target_link_libraries(test_version
+    target_link_libraries(test_helloworld
         ${Boost_LIBRARIES}
         helloworld
     )
 
     enable_testing()
-    add_test(test_version test_version)
+    add_test(test_helloworld test_helloworld)
 endif()
 
 install(TARGETS helloworld_main RUNTIME DESTINATION bin)
