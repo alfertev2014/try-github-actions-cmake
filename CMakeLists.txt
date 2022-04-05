@@ -16,7 +16,7 @@ configure_file(version.h.in version.h)
 
 add_library(helloworld helloworld.cpp)
 
-target_include_directories(helloworld PUBLIC "${CMAKE_BINARY_DIR}")
+target_include_directories(helloworld PRIVATE "${CMAKE_BINARY_DIR}")
 
 add_executable(helloworld_main main.cpp)
 
